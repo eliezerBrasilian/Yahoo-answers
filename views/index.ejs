@@ -1,0 +1,50 @@
+<%- include('../public/partials/header.ejs') %>
+    <title>Yahoo home</title>
+  </head>
+  <body>
+    <%- include('../public/partials/navbar.ejs') %>
+   <div class="container">
+    <form method="post" action="save_question">
+      <div class="card">
+        <div class="card-header">
+          <h1>Ask a question</h1>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Title</h1>
+          <input class="form-control card-text" type="text" name="title" placeholder="title of your doubt" required>
+          <br>
+          <h3 class="card-text">Description</h1>
+            <textarea class="form-control card-text"  name="description" placeholder="give more information about it" required></textarea>
+        </div>
+        <div class="card-footer">
+          <button type="submit" class="btn" style="width: 100%;background-color: #3c096c;color: #fff">Ask</button>
+        </div>
+      </div>
+    </form>
+    <br>
+    <% questions.forEach(i => { %>
+      <div class="card" style="padding: 15px;">
+        <div style="display: flex;flex-direction: row;column-gap: 10px; ">
+          <img src="https://th.bing.com/th/id/R.01a2fb974429f5b93ba993d67894f097?rik=Xll8UZbXJnzcjw&pid=ImgRaw&r=0" 
+          alt="profile icon"
+          width="30"
+          height="30"/>
+          <div style="flex: 1;flex-direction: column;">
+            <p>Anonimous</p>
+            <p style="margin-top: -20px;">asked at: <%= i.createdAt %></p>
+          </div>
+        </div>
+        <h1><%= i.title %></h1>
+        <p><%= i.description %></p>
+      
+        <div class="btn" style="display: flex;flex-direction: row;background-color: #4585ff;column-gap: 10px;height:40px;width: 30%;border-radius: 10px;justify-content: center;align-items: center;">
+          <img src="/images/plus.png" alt="profile icon" width="30"height="30"/>
+          <p>Responder</p>
+        </div> 
+      </div>
+    <% }) %>
+     
+   </div>
+  </body>
+
+  <%- include('../public/partials/footer.ejs') %>
