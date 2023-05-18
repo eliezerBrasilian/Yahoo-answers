@@ -37,10 +37,10 @@
         <h1><%= i.title %></h1>
         <p><%= i.description %></p>
       
-        <div class="btn" style="display: flex;flex-direction: row;background-color: #4585ff;column-gap: 10px;height:40px;width: 30%;border-radius: 10px;justify-content: center;align-items: center;">
+        <a href="/question/<%= i.id %>" class="btn" style="display: flex;flex-direction: row;background-color: #4585ff;column-gap: 10px;height:40px;width: 30%;border-radius: 10px;justify-content: center;align-items: center;">
           <img src="/images/plus.png" alt="profile icon" width="30"height="30"/>
-          <p>Responder</p>
-        </div> 
+          <p style="margin:auto 0">Answer</p>
+        </a> 
       </div>
     <% }) %>
      

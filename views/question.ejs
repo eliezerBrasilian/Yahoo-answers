@@ -8,7 +8,43 @@
  
     <br>
 
-     
+    <div class="card" style="padding: 15px;">
+        <div style="display: flex;flex-direction: row;column-gap: 10px; ">
+          <img src="https://th.bing.com/th/id/R.01a2fb974429f5b93ba993d67894f097?rik=Xll8UZbXJnzcjw&pid=ImgRaw&r=0" 
+          alt="profile icon"
+          width="30"
+          height="30"/>
+          <div style="flex: 1;flex-direction: column;">
+            <p>Anonimous</p>
+            <p style="margin-top: -20px;">asked at: <%= question.createdAt %></p>
+          </div>
+        </div>
+        <h1><%= question.title %></h1>
+        <p><%= question.description %></p>
+      
+       
+      </div>
+      <br>
+      <hr>
+      <br>
+      <form>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Your answer</h3>
+            </div>
+            <textarea placeholder="type your answer" class="form-control"></textarea>
+            <div class="card-footer">
+                <div style="display: flex;justify-content: flex-end;">
+                    <div class="btn form-control" style="display: flex;flex-direction: row;background-color: #4585ff;column-gap: 10px;height:40px;width: 30%;border-radius: 10px;justify-content: center;align-items: center;">
+                        <img src="/images/plus.png" alt="profile icon" width="30"height="30"/>
+                        <p style="margin:auto 0">Answer</p>
+                      </div> 
+                </div>
+            </div>
+            
+          </div>
+      </form>
+      
    </div>
   </body>
 

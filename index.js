@@ -28,8 +28,18 @@ app.get('/', (req, res) => {
   
 });
 app.get('/question/:id',(req,res)=>{
+ let id = req.params.id;
+
+ Question.findOne({where: {id : id}}).then((q)=>{
+  if(q !== null){
+    res.render('question',{
+      question: q
+    })
+  }
+  else res.redirect('/')
+ })
  
-  res.render('question')
+  
 })
 app.post('/save_question',(req,res)=>{
   let title = req.body.title;
